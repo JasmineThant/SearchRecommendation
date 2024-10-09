@@ -1,0 +1,20 @@
+import re
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from SearchRecommendation import Recommend_Occupation
+from SearchRecommendation import clean_text
+from SearchRecommendation import Search_Occupation
+
+file_path = 'C:/1. Jasmine/Mine Docs/Learning/My Projs/Carprice/Data_2023-2024.csv'
+df = pd.read_csv(file_path)
+df.columns = df.columns.str.strip()
+df['Cleaned_Occupation'] = df['Ocupation'].apply(clean_text)
+tfidf = TfidfVectorizer(stop_words='english')
+tfidf_matrix = tfidf.fit_transform(df['Cleaned_Occupation'])
+
+recommendationsOccu = Recommend_Occupation('DIRECTOR', tfidf_matrix, df)
+print(recommendationsOccu)
+
+search_resultsOccu = Search_Occupation('DIRECTOR', tfidf_matrix, df, tfidf)
+print(search_resultsOccu)
