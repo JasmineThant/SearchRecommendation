@@ -7,7 +7,7 @@ from SearchRecommendation import clean_text
 from SearchRecommendation import Search_Occupation
 
 #Change your input data
-file_path = 'C:/1. Jasmine/Mine Docs/Learning/My Projs/Carprice/Data_2023-2024.csv' 
+file_path = '..../Data_2023-2024.csv' 
 df = pd.read_csv(file_path)
 df.columns = df.columns.str.strip()
 
