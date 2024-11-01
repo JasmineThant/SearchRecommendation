@@ -1,5 +1,6 @@
 Search and Recommendation for Motors:
 
-Objective: 	Recommend similar motor models and search based on historical customer data.
-Data: 		Past customer data
-ML Techniques: 	Content based filtering, Cosine similarity
+Objective: 	Build search and recommendation model to suggest motors or related accessories based on past customer data
+Data: 		 Past customer data
+ML Techniques: 	Content-Based Filtering.
+Impact:		Improves customer experience by suggesting relevant products, leading to cross-sell and up-sell opportunities.
